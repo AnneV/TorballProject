@@ -1,5 +1,5 @@
 
-<% form_for :menu, @menu do |f| %>
+<% form_for(@menu) do |f| %>
   <%= f.error_messages %>
     <%= f.label :name %>
     <%= f.text_field :name %> <br />
@@ -7,7 +7,7 @@
     <%= f.text_field :type %> <br />
 
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Save' %>
   </p>
 <% end %>
 
