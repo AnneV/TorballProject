@@ -1,3 +1,18 @@
+<h1><%= @menu.name %> </h1>
+
+<div class="action_menu">
+</div>
+
+<% if !@menu.links.empty? -%>
+  <ul>
+  <% for link in @menu.links %>
+   <li><%= link.name %></li> 
+  <% end -%>
+  </ul>
+<% else -%>
+  <p>There is no link in this menu</p>
+<% end -%>
+
 
 <%= link_to 'Edit', edit_menu_path(@menu) %> |
 <%= link_to 'Back', menus_path %>

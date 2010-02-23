@@ -1,11 +1,16 @@
 <h1>Listing menus</h1>
 
 <table>
+  <thead>
+    <td> Name </td><td> Type </td><td> ID </td><td></td>
+  </thead>
 <% @menus.each do |menu| %>
   <tr><th><%= menu.name %></th>
-    <td><%= link_to 'Show', menu %></td>
-    <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
-    <td><%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= menu.type %></td>
+      <td><%= menu.id %></td>
+      <td><%= link_to 'Show', menu %> | 
+        <%= link_to 'Edit', edit_menu_path(menu) %> |
+        <%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
