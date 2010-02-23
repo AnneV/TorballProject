@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100222171411) do
+ActiveRecord::Schema.define(:version => 20100223125350) do
+
+  create_table "menus", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "link_id"
+    t.string   "link_type",  :default => "Page"
+  end
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -17,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100222171411) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "home",       :default => false
   end
 
   create_table "users", :force => true do |t|

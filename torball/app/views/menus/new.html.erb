@@ -2,6 +2,8 @@
 
 <% form_for(@menu) do |f| %>
   <%= f.error_messages %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
   <p>
     <%= f.submit 'Create' %>
