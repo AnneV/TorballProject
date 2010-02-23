@@ -10,7 +10,7 @@ Mettre à jour la base de données
 
 ``cd torball``
 
-``rake db:migate``
+``rake db:migrate``
 
 Lancer le serveur
 
