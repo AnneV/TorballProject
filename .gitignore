@@ -1,3 +1,4 @@
 *.swp
-
+torball/log/development.log
+torball/config/initializers/site_keys.rb
 
