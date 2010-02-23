@@ -1,0 +1,14 @@
+
+<% for menu in @menus -%>
+  <div id="<%= menu.type -%>">
+    <% if !menu.links.empty? -%>
+      <ul>
+      <% for link in menu.links -%>
+	<% if link.published -%>
+	  <%= link_to link.name, action => 'show', :id => link.page_id %>
+	<% end -%>
+      <% end -%> 
+      </ul>
+    <% end -%>
+  </div>
+<% end %>

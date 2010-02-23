@@ -18,7 +18,6 @@ class MenusController < ApplicationController
   # GET /menus/1.xml
   def show
     @menu = Menu.find(params[:id])
-    @links = @menu.links
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @menu }
@@ -76,5 +75,20 @@ class MenusController < ApplicationController
       format.html { redirect_to(menus_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def add_link
+    @menu = Menu.find_by_id(params[:id])
+    @link = Link.new(:menu => @menu)
+    
+    return unless request.post?
+      @link = Link.new(params[:link])
+      @link.menu = @menu
+      if @link.save
+        flash[:success_notice] = "Link successfully created"
+        redirect_to :action => 'show', :id => @menu.id
+      else 
+        flash[:fail_notice] = "Error during creation"
+      end
   end
 end

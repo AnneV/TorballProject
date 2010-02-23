@@ -2,11 +2,17 @@
 
 <table>
   <thead>
-    <td> Name </td><td> Type </td><td> ID </td><td></td>
+    <td> Name </td><td> Type </td><td> Published</td><td> ID </td><td></td>
   </thead>
 <% @menus.each do |menu| %>
   <tr><th><%= menu.name %></th>
       <td><%= menu.type %></td>
+      <td><% if menu.published %>
+            Yes
+          <% else -%>
+	    No
+	  <% end -%>
+      </td>
       <td><%= menu.id %></td>
       <td><%= link_to 'Show', menu %> | 
         <%= link_to 'Edit', edit_menu_path(menu) %> |

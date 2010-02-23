@@ -1,6 +1,12 @@
 <h1><%= @menu.name %> </h1>
 
+<% if @menu.published %>
+  Is published
+<% else %>
+  Is not published
+<% end %>
 <div class="action_menu">
+    <%= link_to "Add Link", :action => "add_link", :id => @menu.id %>
 </div>
 
 <% if !@menu.links.empty? -%>

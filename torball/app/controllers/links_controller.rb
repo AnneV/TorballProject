@@ -26,7 +26,7 @@ class LinksController < ApplicationController
   # GET /links/new.xml
   def new
     @link = Link.new
-
+    @menus = Menu.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @link }
@@ -36,6 +36,7 @@ class LinksController < ApplicationController
   # GET /links/1/edit
   def edit
     @link = Link.find(params[:id])
+    @menu = @menu.all
   end
 
   # POST /links
