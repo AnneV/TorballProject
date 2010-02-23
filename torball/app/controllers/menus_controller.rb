@@ -1,4 +1,7 @@
 class MenusController < ApplicationController
+
+  before_filter :authorize_only_for_user, :except => [:index]
+
   # GET /menus
   # GET /menus.xml
   def index

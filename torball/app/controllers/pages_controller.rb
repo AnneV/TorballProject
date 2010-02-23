@@ -3,22 +3,17 @@ class PagesController < ApplicationController
   # GET /pages.xml
 
 
+  before_filter :login_required, :except => 'index'
+
   def index
     @pages = Page.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @pages }
-    end
+    render :layout => 'frontend'
   end
 
   def list
     @pages = Page.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @pages }
-    end
+    render :layout => 'frontend'
   end
 
 
@@ -27,10 +22,6 @@ class PagesController < ApplicationController
   def show
     @page = Page.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @page }
-    end
   end
 
   # GET /pages/new
@@ -42,11 +33,14 @@ class PagesController < ApplicationController
       format.html # new.html.erb
       format.xml  { render :xml => @page }
     end
+    render :layout => 'backend'
   end
 
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
+    render :layout => 'backend'
+
   end
 
   # POST /pages
