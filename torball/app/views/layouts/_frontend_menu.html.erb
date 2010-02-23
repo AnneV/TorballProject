@@ -5,7 +5,7 @@
       <ul>
       <% for link in menu.links -%>
 	<% if link.published -%>
-	  <%= link_to link.name, action => 'show', :id => link.page_id %>
+	  <%= link_to link.name, :action => 'show', :id => link.page_id %>
 	<% end -%>
       <% end -%> 
       </ul>
