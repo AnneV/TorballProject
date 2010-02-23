@@ -1,1 +1,0 @@
-  [4;36;1mSQL (0.0ms)[0m   [0;1mNoMethodError: undefined method `fformat' for #<PGresult:0xb6ec32d4>: SHOW client_min_messages[0m

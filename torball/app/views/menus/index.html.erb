@@ -5,7 +5,7 @@
   </tr>
 
 <% @menus.each do |menu| %>
-  <tr>
+  <tr><th><%= menu.name %></th>
     <td><%= link_to 'Show', menu %></td>
     <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
     <td><%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %></td>

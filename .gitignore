@@ -2,4 +2,5 @@
 *~
 torball/log/development.log
 torball/config/initializers/site_keys.rb
-
+torball/vendor/plugins/superdumper
+torball/database.pdf

@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
 
-  before_filter :authorize_only_for_user, :except => [:index]
+  before_filter :login_required
+  layout 'backend'
 
   # GET /menus
   # GET /menus.xml
@@ -27,11 +28,14 @@ class MenusController < ApplicationController
   # GET /menus/new
   # GET /menus/new.xml
   def new
-    @menu = Menu.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @menu }
+    return unless request.post?
+    @menu = Menu.new(params[:menu])
+    if @menu.save
+      flash[:success_notice] = 'Menu was successfully created.'
+      redirect_to :action => 'index'
+    else
+      flash[:fail_notice] = 'Menu was successfully created.'
+      redirect_to :action => 'new'
     end
   end
 
@@ -43,18 +47,6 @@ class MenusController < ApplicationController
   # POST /menus
   # POST /menus.xml
   def create
-    @menu = Menu.new(params[:menu])
-
-    respond_to do |format|
-      if @menu.save
-        flash[:notice] = 'Menu was successfully created.'
-        format.html { redirect_to(@menu) }
-        format.xml  { render :xml => @menu, :status => :created, :location => @menu }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @menu.errors, :status => :unprocessable_entity }
-      end
-    end
   end
 
   # PUT /menus/1

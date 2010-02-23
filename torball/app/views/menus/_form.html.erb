@@ -1,0 +1,13 @@
+
+<% form_for :menu, @menu do |f| %>
+  <%= f.error_messages %>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <br />
+    <%= f.label :type %>
+    <%= f.text_field :type %> <br />
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+

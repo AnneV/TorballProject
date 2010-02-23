@@ -9,14 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223125350) do
+ActiveRecord::Schema.define(:version => 20100223151948) do
+
+  create_table "links", :force => true do |t|
+    t.string   "name"
+    t.boolean  "published"
+    t.integer  "menu_id"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "menus", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "link_id"
-    t.string   "link_type",  :default => "Page"
+    t.string   "type"
   end
 
   create_table "pages", :force => true do |t|

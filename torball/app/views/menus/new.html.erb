@@ -1,13 +1,4 @@
 <h1>New menu</h1>
 
-<% form_for(@menu) do |f| %>
-  <%= f.error_messages %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
+<%= render :partial => 'form' %>
 <%= link_to 'Back', menus_path %>

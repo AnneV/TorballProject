@@ -6,6 +6,7 @@ Documentation en vrac
 Il faut dans la base de données:
 
 menu
+lien
 page
 editorial
 news
@@ -19,11 +20,11 @@ Structure du site
 menu -> page
 menu -> menu ie menu lié a des sous menu.
 
-menu :
+lien :
     - id
     - nom
-    - lien
-    - menu_id
+    - menu
+    - publié
 
 page:
     - id
