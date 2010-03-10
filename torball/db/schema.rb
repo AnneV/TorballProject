@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223174606) do
+ActiveRecord::Schema.define(:version => 20100224160321) do
 
   create_table "links", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20100223174606) do
     t.datetime "updated_at"
     t.string   "type"
     t.boolean  "published",  :default => false
+    t.integer  "link_id"
   end
 
   create_table "pages", :force => true do |t|

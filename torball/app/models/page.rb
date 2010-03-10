@@ -11,6 +11,7 @@ class Page < ActiveRecord::Base
     page.home = false
     page.save
     self.home = true
+    self.published = true
     self.save
   end
 end

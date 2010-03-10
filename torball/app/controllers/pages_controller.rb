@@ -3,22 +3,16 @@ class PagesController < ApplicationController
   # GET /pages.xml
 
   before_filter :login_required, :except => 'index'
+  layout "backend"
 
   def index
-    @page = Page.find_home
-    render :layout => 'frontend'
-  end
-
-  def list
     @pages = Page.all
   end
-
 
   # GET /pages/1
   # GET /pages/1.xml
   def show
     @page = Page.find(params[:id])
-    render :layout => 'frontend'
   end
 
   # GET /pages/new

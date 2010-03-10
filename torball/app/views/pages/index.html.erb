@@ -1,4 +1,26 @@
-<h1><%= @page.title%></h1>
+<h1>Listing pages</h1>
 
-<%= @page.content %>
+<table>
+  <thead>
+    <td>Title </td><td> Published </td><td> ID </td> <td></td>
+  </thead>
 
+<% @pages.each do |page| %>
+  <tr><th><%=h page.title %></th>
+    <td><% if page.published %>
+	  yes
+        <% else -%>
+	  no
+	<% end -%>
+    </td>
+    <td><%= page.id %></td>
+    <td><%= link_to 'Show', page %> |
+    <%= link_to 'Edit', edit_page_path(page) %> |
+    <%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New page', new_page_path %>
