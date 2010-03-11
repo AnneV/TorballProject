@@ -1,5 +1,7 @@
 class Page < ActiveRecord::Base
 
+  has_one :link
+
   # return page set to home
   def self.find_home
     return Page.find_by_home(true)

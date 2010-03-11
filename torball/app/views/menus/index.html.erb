@@ -2,10 +2,12 @@
 
 <table>
   <thead>
-    <td> Name </td><td> Type </td><td> Published</td><td> ID </td><td></td>
+    <tr>
+      <th> Name </th><th> Type </th><th> Published</th><th> ID </th><th></th>
+    </tr>
   </thead>
 <% @menus.each do |menu| %>
-  <tr><th><%= menu.name %></th>
+  <tr><td class="table_name"><%= menu.name %></td>
       <td><%= menu.type %></td>
       <td><% if menu.published %>
             Yes
@@ -19,6 +21,12 @@
         <%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+  <tfoot>
+    <tr>
+      <th> Name </th><th> Type </th><th> Published</th><th> ID </th><th></th>
+    </tr>
+  </tfoot>
+
 </table>
 
 <br />

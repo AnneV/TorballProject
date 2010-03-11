@@ -2,11 +2,11 @@
 
 <table>
   <thead>
-    <td>Title </td><td> Published </td><td> ID </td> <td></td>
+    <tr><th>Title </th><th> Published </th><th> ID </th><th></th></tr>
   </thead>
 
 <% @pages.each do |page| %>
-  <tr><th><%=h page.title %></th>
+  <tr><td class="table_title"><%=h page.title %></td>
     <td><% if page.published %>
 	  yes
         <% else -%>
@@ -14,11 +14,14 @@
 	<% end -%>
     </td>
     <td><%= page.id %></td>
-    <td><%= link_to 'Show', page %> |
+    <td class="table_actions"><%= link_to 'Show', page %> |
     <%= link_to 'Edit', edit_page_path(page) %> |
     <%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+  <tfoot>
+    <tr><th>Title </th><th> Published </th><th> ID </th><th></th></tr>
+  </tfoot>
 </table>
 
 <br />
