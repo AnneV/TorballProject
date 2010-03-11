@@ -1,5 +1,5 @@
 Menu.create(:id => 1,
-            :name => "menu_principale",
+            :name => "menu_principal",
             :published => true,
             :type => "main")
 
