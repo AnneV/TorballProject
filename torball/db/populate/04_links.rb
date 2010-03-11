@@ -1,9 +1,9 @@
 Link.create(:name => "Accueil",
-            :validate => true,
+            :published => true,
             :menu_id => 1,
             :page_id => 1)
 
 Link.create(:name => "Le Torball",
-            :validate => true,
+            :published => true,
             :menu_id => 1,
             :page_id => 2)
