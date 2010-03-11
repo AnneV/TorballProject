@@ -10,11 +10,41 @@
 </div>
 
 <% if !@menu.links.empty? -%>
-  <ul>
-  <% for link in @menu.links %>
-   <li><%= link.name %></li> 
-  <% end -%>
-  </ul>
+  <table>
+    <thead>
+	<tr>
+	    <th>Link</th>
+	    <th>Page</th>
+	    <th>Is published</th>
+	    <th></th>
+	</tr>
+    </thead>
+    <tbody>
+      <% for link in @menu.links %>
+         <tr>
+	    <td><%= link_to link.name, link %></td> 
+	    <td><%= link_to link.page.title, link.page  %> </td> 
+	    <td><% if link.published%>
+	           Yes
+		<% else %>
+		   No
+		<% end %>
+	    </td>
+	    <td> <%= link_to 'Edit', edit_menu_path(link) %> | Destroy | Add Submenu</td>
+	 </tr>
+      <% end -%>
+  </tbody>
+  <tfoot>
+    <tr>
+	<th>Link</th>
+	<th>Page</th>
+	<th>Is published</th>
+	<th></th>
+    </tr>
+  </tfoot>
+</table>
+
+
 <% else -%>
   <p>There is no link in this menu</p>
 <% end -%>
