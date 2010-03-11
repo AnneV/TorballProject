@@ -15,3 +15,8 @@ Mettre à jour la base de données
 Lancer le serveur
 
 ``script/server``
+
+Installations nécessaires
+================================================================================
+
+*db_populate* : sudo gem install db_populate

@@ -2,6 +2,7 @@
 
 Page.create(:id => 1,
             :published => true,
+            :home => true,
             :title => "Site officiel de la commission TORBALL de la Fédération
             Française Handisport Fédération Française Handisport ",
             :content => "   Que vous connaissiez ou non l'un de ces deux seuls
