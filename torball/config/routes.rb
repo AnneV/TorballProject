@@ -2,13 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tags
 
   map.resources :categories
-
   map.resources :posts
-
   map.resources :links
-
   map.resources :menus
-
   map.resources :pages
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

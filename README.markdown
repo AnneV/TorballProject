@@ -16,6 +16,9 @@ Lancer le serveur
 
 ``script/server``
 
+Et dans firefox, aller à l'adresse suivante : 
+``http://localhost:3000``
+
 Installations nécessaires
 ================================================================================
 
