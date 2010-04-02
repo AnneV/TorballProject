@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
 
   has_one :link
-  validate_presence_of :title, :content
+  validates_presence_of :title, :content
 
 
   # return page set to home

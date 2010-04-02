@@ -1,0 +1,21 @@
+
+<% form_for(@page) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %> <br />
+
+  <%= f.label :published %>
+  <%= f.check_box :published %> <br />
+
+
+  <%= f.label :content %>
+  <%= f.text_area :content%> <br />
+
+  <%= f.label :home %>
+  <%= f.check_box :home %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
