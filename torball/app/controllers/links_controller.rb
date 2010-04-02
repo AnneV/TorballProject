@@ -84,4 +84,19 @@ class LinksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  # creates a submenu linked to this link
+  def add_submenu 
+    @link = Link.find_by_id(params[:id])    
+    @menu = Menu.new(:link => @link)
+    return unless request.post?
+       @menu = Menu.new(params[:menu])
+       if @menu.save
+          flash[:success_notice] = "Submenu successfully created"
+          redirect_to :controller => 'show', :id => @link.menu.id
+       else
+          flash[:fail_notice] = "Error during creation"
+       end
+  end
+
 end

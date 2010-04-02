@@ -81,7 +81,6 @@ class MenusController < ApplicationController
     @menu = Menu.find_by_id(params[:id])
     @pages = Page.all(:conditions => {:published => true})
     @link = Link.new(:menu => @menu)
-    debugger 
     return unless request.post?
       @link = Link.new(params[:link])
       @link.menu = @menu

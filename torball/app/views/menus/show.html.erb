@@ -30,8 +30,25 @@
 		   No
 		<% end %>
 	    </td>
-	    <td> <%= link_to 'Edit', edit_menu_path(link) %> | Destroy | Add Submenu</td>
+	    <td> <%= link_to 'Edit', edit_menu_path(link) %> | Destroy | <%=
+	    link_to 'Add Submenu', 
+	             :controller => 'link', 
+		     :action => 'add_submenu', 
+		     :id => link.id%></td>
 	 </tr>
+        <% if !link.menu.nil? %>
+	<tr class="sub_menu">
+	    <td><%= link_to link.menu.name, link.menu %></td> 
+	    <td></td> 
+	    <td><% if link.menu.published%>
+	           Yes
+		<% else %>
+		   No
+		<% end %>
+	    </td>
+	    <td> Edit| Destroy | Add Link</td>
+	 </tr>
+	 <% end %>
       <% end -%>
   </tbody>
   <tfoot>
