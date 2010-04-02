@@ -86,6 +86,20 @@ th.column_link {
     width: 30%;
 }
 
+#menu ul {
+  list-style: none 
+}
+
+#menu ul li {
+  display: block;
+  margin-left: 15px;
+  float: left;
+}
+
+.clear {
+    clear: both;
+}
+
 .submenu {
     margin: 60px;
     padding-left: 10px;

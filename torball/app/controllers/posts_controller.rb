@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   # GET /posts/new.xml
   def new
     @post = Post.new
-
+    @categories = Category.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @post }
@@ -37,6 +37,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @categories = Category.all
     @post = Post.find(params[:id])
   end
 
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-
+    @post.category_id = params[:category]
     respond_to do |format|
       if @post.save
         flash[:notice] = 'Post was successfully created.'

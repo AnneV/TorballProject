@@ -8,11 +8,9 @@
   <p>
      <%= f.label :category %> <br />
      <select name="category" id="page_id">
-       <option value="">Choose a category</option>
-       <% for category in @categories -%>
-          <option value="<%= category.id %>"> <%= category.name %>  
-       <% end -%>
-    </select>
+     <% for category in @categories -%>
+
+     <% end -%>
   </p>
   <p>
     <%= f.label :published %>
