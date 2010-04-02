@@ -1,6 +1,8 @@
 class Page < ActiveRecord::Base
 
   has_one :link
+  validate_presence_of :title, :content
+
 
   # return page set to home
   def self.find_home
