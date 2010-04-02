@@ -1,11 +1,23 @@
-
 <% for menu in @menus -%>
   <div id="<%= menu.type -%>">
     <% if !menu.links.empty? -%>
       <ul>
       <% for link in menu.links -%>
 	<% if link.published -%>
-	  <%= link_to link.name, :action => 'show', :id => link.page_id %>
+	  <li><%= link_to link.name, :action => 'show', 
+	                             :id => link.page_id %>
+	     <% if !link.submenu.nil? && !link.submenu.links.empty?-%>
+	       <ul class="<%= link.submenu.type %>">
+	          <% for l in link.submenu.links -%>
+		    <li>
+			 <%= link_to l.name, :action => 'show', 
+	                             :id => l.page_id %>
+	    
+		    </li>
+		  <% end -%>
+	       </ul>
+	     <% end -%>
+	  </li>
 	<% end -%>
       <% end -%> 
       </ul>

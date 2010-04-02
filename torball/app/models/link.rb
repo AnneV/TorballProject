@@ -16,8 +16,8 @@
 # TODO Pages linked to links should be published.
 
 class Link < ActiveRecord::Base
-  belongs_to :menu
+  belongs_to :menu 
   belongs_to :page
-  has_one :menu
+  has_one :submenu, :class_name => 'Menu'
   validates_presence_of :page
 end

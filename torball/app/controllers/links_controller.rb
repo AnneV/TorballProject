@@ -91,9 +91,11 @@ class LinksController < ApplicationController
     @menu = Menu.new(:link => @link)
     return unless request.post?
        @menu = Menu.new(params[:menu])
+       @menu.link_id = @link.id
        if @menu.save
           flash[:success_notice] = "Submenu successfully created"
-          redirect_to :controller => 'show', :id => @link.menu.id
+          redirect_to :controller => 'menus', :action => 'show', 
+                      :id => @link.menu.id
        else
           flash[:fail_notice] = "Error during creation"
        end

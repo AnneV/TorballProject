@@ -1,5 +1,5 @@
 
-<% form_for(@menu) do |f| %>
+<% form_for @menu, :url => {:action => 'add_submenu', :id => @link.id} do |f| %>
   <%= f.error_messages %>
     <%= f.label :name %>
     <%= f.text_field :name %> <br />

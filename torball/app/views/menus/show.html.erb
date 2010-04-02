@@ -13,9 +13,9 @@
   <table>
     <thead>
 	<tr>
-	    <th>Link</th>
+	    <th class="column_link">Link</th>
 	    <th>Page</th>
-	    <th>Is published</th>
+	    <th class="column_published">Is published</th>
 	    <th></th>
 	</tr>
     </thead>
@@ -32,23 +32,37 @@
 	    </td>
 	    <td> <%= link_to 'Edit', edit_menu_path(link) %> | Destroy | <%=
 	    link_to 'Add Submenu', 
-	             :controller => 'link', 
+	             :controller => 'links', 
 		     :action => 'add_submenu', 
 		     :id => link.id%></td>
 	 </tr>
-        <% if !link.menu.nil? %>
-	<tr class="sub_menu">
-	    <td><%= link_to link.menu.name, link.menu %></td> 
+        <% if !link.submenu.nil? %>
+	<tr class="submenu">
+	    <td class="submenu"><%= link_to link.submenu.name, link.submenu %></td> 
 	    <td></td> 
-	    <td><% if link.menu.published%>
+	    <td><% if link.submenu.published%>
 	           Yes
 		<% else %>
 		   No
 		<% end %>
 	    </td>
-	    <td> Edit| Destroy | Add Link</td>
+	    <td> Edit| Destroy | <%= link_to "Add link", :action =>
+	    "add_link", :id => link.submenu.id %></td>
 	 </tr>
-	 <% end %>
+      <% for l in link.submenu.links %>
+         <tr class="link submenu">
+	    <td class="submenu"><%= link_to l.name, l %></td> 
+	    <td><%= link_to l.page.title, l.page  %> </td> 
+	    <td><% if l.published%>
+	           Yes
+		<% else %>
+		   No
+		<% end %>
+	    </td>
+	    <td> <%= link_to 'Edit', edit_menu_path(l) %> | Destroy</td>
+	 </tr>
+	   <% end -%>
+	 <% end -%>
       <% end -%>
   </tbody>
   <tfoot>
@@ -65,7 +79,5 @@
 <% else -%>
   <p>There is no link in this menu</p>
 <% end -%>
-
-
 <%= link_to 'Edit', edit_menu_path(@menu) %> |
 <%= link_to 'Back', menus_path %>
