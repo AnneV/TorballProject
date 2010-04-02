@@ -1,0 +1,9 @@
+graph G {
+node [shape=Mrecord];Page [label="{Page|<id> id|<title> title|<published> published|<content> content|<created_at> created_at|<updated_at> updated_at|<home> home}"];
+Menu [label="{Menu|<id> id|<name> name|<created_at> created_at|<updated_at> updated_at|<type> type|<published> published|<link_id> link_id}"];
+Link [label="{Link|<id> id|<name> name|<published> published|<menu_id> menu_id|<page_id> page_id|<created_at> created_at|<updated_at> updated_at}"];
+User [label="{User|<id> id|<login> login|<name> name|<email> email|<crypted_password> crypted_password|<salt> salt|<created_at> created_at|<updated_at> updated_at|<remember_token> remember_token|<remember_token_expires_at> remember_token_expires_at}"];
+Menu:link_id:w -- Link:id:e;
+Link:page_id:w -- Page:id:e;
+Link:menu_id:w -- Menu:id:e;
+}

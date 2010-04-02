@@ -11,7 +11,7 @@
   </p>
   <p>
     <%= f.label :page %><br />
-    <select name="page" id ="page">
+    <select name="page" id ="page_id">
 	<option value=""> Choose a page </option>
 	<% for page in @pages -%>
 	  <option value="<%= page.id %>"> <%= page.id %> - <%= page.title %> </option>
