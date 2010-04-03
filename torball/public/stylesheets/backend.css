@@ -128,3 +128,16 @@ h1 span.title_button a:hover {
     border: 1px solid #333;
 }
 
+
+/* Editing fields*/
+
+textarea {
+    width: 80%;
+}
+
+input.title {
+    width: 80%;
+    font-size: 20px;
+    padding: 2px 4px;
+}
+
