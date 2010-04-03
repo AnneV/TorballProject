@@ -1,0 +1,9 @@
+<% if !@editos.empty? -%>
+    <% for edito in @editos -%>
+       <div class="edito">
+	<%= link_to edito.title, :action => 'edito', :id => edito.id%>
+       </div>
+    <% end -%>
+<% end -%>
+
+
