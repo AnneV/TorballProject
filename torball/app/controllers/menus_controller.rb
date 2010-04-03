@@ -27,6 +27,7 @@ class MenusController < ApplicationController
   # GET /menus/new
   # GET /menus/new.xml
   def new
+    @menu = Menu.new()
     return unless request.post?
     @menu = Menu.new(params[:menu])
     if @menu.save

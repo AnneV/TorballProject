@@ -82,7 +82,7 @@ td, th {
     padding-left: 5px;
 }
 
-th.column_link {
+th.column_link, th.column_posts_title {
     width: 30%;
 }
 
@@ -103,5 +103,28 @@ th.column_link {
 .submenu {
     margin: 60px;
     padding-left: 10px;
+}
+/* Page Title*/
+
+h1 {
+    font-style: italic;
+    margin-left: 15px;
+}
+
+h1 span.title_button a{
+    font-weight: bold;
+    padding: 3px;
+    margin-left: 15px;
+    font-size: 12px;
+    border: 1px solid #999;
+    color: #444;
+    -moz-background-clip: border;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    -moz-border-radius: 15px;
+}
+
+h1 span.title_button a:hover {
+    color: #111;
+    border: 1px solid #333;
 }
 

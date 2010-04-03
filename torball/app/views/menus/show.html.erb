@@ -1,13 +1,14 @@
-<h1><%= @menu.name %> </h1>
+<h1><%= @menu.name %> 
+<span class="title_button">
+   <%= link_to "Add Link", :action => "add_link", :id => @menu.id %>
+</span>
+</h1>
 
 <% if @menu.published %>
   Is published
 <% else %>
   Is not published
 <% end %>
-<div class="action_menu">
-    <%= link_to "Add Link", :action => "add_link", :id => @menu.id %>
-</div>
 
 <% if !@menu.links.empty? -%>
   <table>
@@ -30,11 +31,14 @@
 		   No
 		<% end %>
 	    </td>
-	    <td> <%= link_to 'Edit', edit_menu_path(link) %> | Destroy | <%=
-	    link_to 'Add Submenu', 
-	             :controller => 'links', 
-		     :action => 'add_submenu', 
-		     :id => link.id%></td>
+	    <td> <%= link_to 'Edit', edit_menu_path(link) %> | 
+	         <%= link_to 'Destroy', link, :confirm => "Are you sure ?",
+		 :method => 'delete' %> | 
+		 <%= link_to 'Add Submenu', 
+	               :controller => 'links', 
+		       :action => 'add_submenu', 
+		       :id => link.id %>
+	    </td>
 	 </tr>
         <% if !link.submenu.nil? %>
 	<tr class="submenu">

@@ -77,12 +77,10 @@ class LinksController < ApplicationController
   # DELETE /links/1.xml
   def destroy
     @link = Link.find(params[:id])
+    menu = @link.menu
     @link.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(links_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to :controller => 'menus', :action => 'show', :id => menu.id
   end
 
   # creates a submenu linked to this link
