@@ -73,7 +73,8 @@ Page.create(:id => 2,
             est en caoutchouc et contient de petites grenailles de fer.</p>")
 
 
-Page.create(:published => true,
+Page.create(:id => 3,
+	:published => true,
             :title => "Commission Torball - Annuaire Torball 2009-2010
 Clubs de France ",
             :content => "<h2>ANGERS</h2>
@@ -1257,3 +1258,40 @@ Cecisport)</caption>
 			06-20-02-82-42<br>
 			Mail :
 			<a href=\"mailto:joel.meyer0610@orange.fr\">joel.meyer0610@orange.fr</a>")
+
+Page.create(:id => 4,
+            :published => true,
+            :title => "Calendrier de la saison en cours",
+            :content => "
+            		<h2>Torball officiel 2009/2010</h2>
+Dates et lieux déjà connus pour cette année :
+		<ul>		
+			<li>17/10/2009 : Assemblée Générale des Clubs de Torball 10h-17h (Association Valentin Hauy, salle de l'Auditorium, 5 rue Duroc, 75007 Paris).</li>
+			<li>27-29/11/2009 : Coupe d'Europe des Clubs Champions (Suisse)</li>
+			<li>12/12/2009 : D1 masculine (premier tour), à Chartres (organisateur
+Copaa Paris).</li>
+
+			<li>13/02/2010 : D1 féminine (premier tour), H Lyonnais</li>
+			<li>13/02/2010 : D3 masculine (premier tour), H Lyonnais</li>
+			<li>13/03/2010 : D2 masculine (premier tour), CS AVH Touraine</li>
+			<li>13/03/2010 : D4 masculine (premier tour), CS AVH Touraine</li>
+			<li>20-21/03/2010 : Coupe de France masculine, Saint-Brieuc (CRH Bretagne)</li>
+			<li>08/05/2010 : D1 féminine (second tour), ASCND Marseille</li>
+
+			<li>29/05/2010 : D4 masculine (second tour), CST Laval</li>
+			<li>05/06/2010 : Coupe de France féminine, Brest</li>
+			<li>12/06/2010 : D1 masculine (second tour), ASSHAV Poitiers</li>
+			<li>19/06/2010 : D2 masculine (second tour), ASAA Strasbourg</li>
+			<li>26/06/2010 : D3 masculine (second tour), Mulhouse TC</li>
+		</ul>		
+
+		<h2>Tournois amicaux 2009/2010</h2>
+
+Dates et lieux déjà connus pour cette année :
+		<ul>		
+			<li>23/01/2010 : CS AVH Touraine</li>
+			<li>06/02/2010 : ASSHAV Poitiers</li>
+			<li>24/04/2010 : ANICES Nice (international)</li>
+			<li>24/04/2010 : Comité Départemental Handisport du Loiret (Orléans)</li><li>05/06/2010 : EDV 82 Montauban</li>
+		</ul>")
+
