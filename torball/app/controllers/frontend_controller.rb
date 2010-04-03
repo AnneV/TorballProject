@@ -20,6 +20,9 @@ class FrontendController < ApplicationController
   def show
     @page = Page.find_by_id(params[:id])
     @menus = Menu.all(:conditions => {:published => true})
+    if @page.home
+       redirect_to :action => 'home', :id => @page.id
+    end
   end
 
   def edito

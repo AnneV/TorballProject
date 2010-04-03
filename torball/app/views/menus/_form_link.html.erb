@@ -13,6 +13,12 @@
   <p>
      <%= f.label :position %> <br />
      <select name="position" id="position">
+        <option value=""></option>
+	<% for link in @links -%>
+	  <option value="<%= link.id %>"><%= link.position %> - After 
+	      <%= link.name %>
+	  </option>
+	<% end -%>
      </select>
   </p>
 

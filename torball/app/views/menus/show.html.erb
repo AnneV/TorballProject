@@ -4,12 +4,19 @@
 </span>
 </h1>
 
+<fieldset>
+  <legend>General information</legend>
 <% if @menu.published %>
   Is published
 <% else %>
   Is not published
 <% end %>
 
+
+</fieldset>
+
+<fieldset>
+  <legend>Links</legend>
 <% if !@menu.links.empty? -%>
   <table>
     <thead>
@@ -31,8 +38,7 @@
 		   No
 		<% end %>
 	    </td>
-	    <td> <%= link_to 'Edit', edit_menu_path(link) %> | 
-	         <%= link_to 'Destroy', link, :confirm => "Are you sure ?",
+	    <td> <%= link_to 'Destroy', link, :confirm => "Are you sure ?",
 		 :method => 'delete' %> | 
 		 <%= link_to 'Add Submenu', 
 	               :controller => 'links', 
@@ -83,5 +89,5 @@
 <% else -%>
   <p>There is no link in this menu</p>
 <% end -%>
-<%= link_to 'Edit', edit_menu_path(@menu) %> |
+</legend>
 <%= link_to 'Back', menus_path %>

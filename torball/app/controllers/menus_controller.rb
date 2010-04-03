@@ -81,6 +81,7 @@ class MenusController < ApplicationController
   def add_link
     @menu = Menu.find_by_id(params[:id])
     @pages = Page.all(:conditions => {:published => true})
+    @links = Link.all(:conditions => {:published => true})
     @link = Link.new(:menu => @menu)
     return unless request.post?
       @link = Link.new(params[:link])
