@@ -8,7 +8,7 @@
   </thead>
 
 <% @pages.each do |page| %>
-  <tr><td class="table_title"><%= link_to h(page.title), page %></td>
+  <tr><td class="table_title"><%= link_to h(page.title), edit_page_path(page) %></td>
     <td><% if page.published %>
 	  yes
         <% else -%>
@@ -17,8 +17,9 @@
     </td>
     <td><%= page.id %></td>
     <td class="table_actions">
-    <%= link_to 'Edit', edit_page_path(page) %> |
-    <%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+       <%= link_to 'Edit', edit_page_path(page) %> |
+       Destroy
+    </td>
   </tr>
 <% end %>
   <tfoot>

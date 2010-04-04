@@ -56,8 +56,16 @@
 		   No
 		<% end %>
 	    </td>
-	    <td> Edit| Destroy | <%= link_to "Add link", :action =>
-	    "add_link", :id => link.submenu.id %></td>
+	    <td> Edit | 
+	         <%= link_to 'Destroy',
+		             link.submenu,
+		             :confirm => "Yhis will destroy all the links of
+			     this submenu. Are you sure ?",
+		             :method => 'delete'%> | 
+		 <%= link_to "Add link", 
+		             :action => "add_link", 
+			     :id => link.submenu.id %>
+	    </td>
 	 </tr>
       <% for l in link.submenu.links %>
          <tr class="link submenu">
@@ -69,7 +77,12 @@
 		   No
 		<% end %>
 	    </td>
-	    <td> <%= link_to 'Edit', edit_menu_path(l) %> | Destroy</td>
+	    <td> <%= link_to 'Edit', edit_link_path(l) %> | 
+	         <%= link_to 'Destroy',
+		             l,
+			     :confirm => "Are you sure ?",
+			     :method => 'delete' %>
+	    </td>
 	 </tr>
 	   <% end -%>
 	 <% end -%>

@@ -20,4 +20,11 @@ class Link < ActiveRecord::Base
   belongs_to :page
   has_one :submenu, :class_name => 'Menu'
   validates_presence_of :page
+
+
+  def before_destroy
+    # unlink all submenus to this link
+    self.submenu.link_id = nil
+    self.submenu.save
+  end
 end

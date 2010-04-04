@@ -1,21 +1,29 @@
+<div id="main">
 
-<div>
-    <% form_for(@page) do |f| %>
-    <%= f.error_messages %>
+  <% form_for(@page) do |f| %>
+      <%= f.error_messages %>
+  <div id="right_column">
+    <div id="bloc_published" class="bloc">
+       <div class="bloc_title">
+           <h1>Publish</h1>
+       </div>
+       <div class="bloc_content">
+	  <%= f.label :home %>
+	  <%= f.check_box :home %> <br />
+	  <%= f.label :published %>
+	  <%= f.check_box :published %> <br />
+	</div>
+	<div class="block_footer">
+	  <%= f.submit 'Send' %>
+	</div>
 
+    </div>
+  </div>
+
+  <div id="left_column">
     <%= f.text_field :title, :class => 'title'%> <br />
-
-    <%= f.label :published %>
-    <%= f.check_box :published %> <br />
-
-
     <%= f.text_area :content%> <br />
+  </div>
 
-    <%= f.label :home %>
-    <%= f.check_box :home %>
-    <p>
-    <%= f.submit 'Send' %>
-    </p>
     <% end %>
 </div>
-

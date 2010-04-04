@@ -1,0 +1,48 @@
+<h1>Listing medias
+
+<span class="title_button"><%= link_to 'New media', new_media_path %></span>
+</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>File</th>
+      <th>Author</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @medias.each do |media| %>
+  <tr>
+    <td><%=h media.title %>    
+    <img width="80" 
+         height="53" 
+         title="<%=h media.title %>" alt=""
+         class="attachment-80x60"
+         src="<%= media.generates_path%>">
+    </td>
+    <td><%=h media.file_name %></td>
+    <td><%=h media.user.name %></td>
+    <td><%=h media.created_at %></td>
+    <td>Show |
+        Edit |
+        Destroy
+    </td>
+  </tr>
+<% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th></th>
+      <th>File</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </tfoot>
+</table>
+
+<br />
+
+

@@ -1,6 +1,4 @@
 class PagesController < ApplicationController
-  # GET /pages
-  # GET /pages.xml
 
   before_filter :login_required, :except => 'index'
   layout "backend"

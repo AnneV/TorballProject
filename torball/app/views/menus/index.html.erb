@@ -5,12 +5,23 @@
 <table>
   <thead>
     <tr>
-      <th> Name </th><th> Type </th><th> Published</th><th> ID </th><th></th>
+      <th> Name </th>
+      <th> Type </th>
+      <th> Submenu </th>
+      <th> Published</th>
+      <th> ID </th><th></th>
     </tr>
   </thead>
 <% @menus.each do |menu| %>
   <tr><td class="table_name"><%= link_to menu.name, menu %></td>
       <td><%= menu.type %></td>
+      <td>
+          <% if menu.link.nil?%>
+	     No
+	  <% else %>
+	     Yes
+	  <% end %>
+      </td>
       <td><% if menu.published %>
             Yes
           <% else -%>
@@ -20,7 +31,10 @@
       <td><%= menu.id %></td>
       <td> 
         <%= link_to 'Edit', edit_menu_path(menu) %> |
-        <%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %></td>
+        <%= link_to 'Destroy', menu, 
+	            :confirm => "Are you sure you want to destroy this menu ?",
+	            :method => 'delete' %>
+     </td>
   </tr>
 <% end %>
   <tfoot>

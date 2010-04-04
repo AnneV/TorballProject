@@ -1,4 +1,4 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #f9f9f9; color: #333; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -132,12 +132,57 @@ h1 span.title_button a:hover {
 /* Editing fields*/
 
 textarea {
-    width: 80%;
+    width: 100%;
+
 }
 
 input.title {
-    width: 80%;
+    width: 100%;
     font-size: 20px;
     padding: 2px 4px;
 }
+
+/*left column - right column */
+
+#left_column {
+    float: left
+    padding: 2px 4px;
+    margin-right: 300px;
+}
+
+
+#right_column {
+    float: right;
+    min-width: 250px;
+    display: block;
+}
+
+/* Right blocs */
+
+.bloc {
+    -moz-border-radius: 9px;
+    border: 1px #ccc solid;
+    background-color: #fff;
+}
+
+.bloc_title {
+    background: #ccc;
+    border-bottom: 1px #bbb solid;
+    -moz-border-radius-topright: 6px;
+   -moz-border-radius-topleft: 6px;
+}
+
+.bloc_title h1{
+    font-size: 13px;
+    margin: 0;
+    color: #111;
+    -moz-background-clip: border;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+    padding: 0px 4px;
+}
+
+.bloc_content {
+    padding: 5px;
+}
+
 

@@ -70,6 +70,7 @@ class MenusController < ApplicationController
   # DELETE /menus/1.xml
   def destroy
     @menu = Menu.find(params[:id])
+    @links = Link.find_by_menu_id(@menu.id)
     @menu.destroy
 
     respond_to do |format|
